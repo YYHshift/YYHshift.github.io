@@ -9,7 +9,8 @@ export const revalidate = 0;
 export default async function Home() {
   const { data: profile } = await supabase.from('profile').select('*').single();
   const { data: experiences } = await supabase.from('experience').select('*').order('start_date', { ascending: false });
-  const { data: education } = await supabase.from('education').select('*').order('start_date', { ascending: false });
+  // const { data: education } = await supabase.from('education').select('*').order('start_date', { ascending: false });
+  const { data: education } = await supabase.from('education').select('*').order('display_order', { ascending: true });
   const { data: projects } = await supabase.from('projects').select('*');
   const { data: skillsData } = await supabase.from('skills').select('*').order('display_order', { ascending: true });
 
