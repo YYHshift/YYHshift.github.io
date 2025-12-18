@@ -11,7 +11,8 @@ export default async function Home() {
   const { data: experiences } = await supabase.from('experience').select('*').order('start_date', { ascending: false });
   // const { data: education } = await supabase.from('education').select('*').order('start_date', { ascending: false });
   const { data: education } = await supabase.from('education').select('*').order('display_order', { ascending: true });
-  const { data: projects } = await supabase.from('projects').select('*');
+  // const { data: projects } = await supabase.from('projects').select('*');
+  const { data: projects } = await supabase.from('projects').select('*').order('display_order', { ascending: true });
   const { data: skillsData } = await supabase.from('skills').select('*').order('display_order', { ascending: true });
 
   if (!profile) return <div className="p-20 text-center text-slate-500">Loading Profile...</div>;
