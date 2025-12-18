@@ -80,7 +80,7 @@ export default async function Home() {
           {/* 修改点：把原来的 -mb-6 改成了 mb-12，拉开间距 */}
           <div className="md:hidden mb-12">
             <ScrollFade>
-              <div className="bg-white/5 p-5 rounded-xl border border-white/10 italic text-slate-400 text-sm leading-relaxed text-justify">
+              <div className="italic text-slate-400 text-sm leading-relaxed text-justify">
                 "{profile.summary}"
               </div>
             </ScrollFade>
